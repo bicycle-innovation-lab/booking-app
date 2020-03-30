@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+:root {
+  --primary-hue: 178;
+  --primary-saturation: 100%;
+  --primary-lightness: 25%;
+  --secondary-hue: 0;
+  --secondary-saturation: 100%;
+  --secondary-lightness: 44%;
+
+  --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+  --secondary-color: hsl(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness));
+
+  --black: hsl(0, 0%, 18%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(120, 1%, 68%);
+
+  --shadow: hsla(0, 0%, 62%, 0.3);
+
+  --font-family: 'Montserrat', sans-serif;
+
+  --border-radius: 0.8rem;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: var(--font-family);
+  /* // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+h1 {
+  color: var(--gray);
+}
+
+.tabbar {
+  --active: var(--primary-color);
+  --icon: #6C7486;
+  --icon-b-active: #fff;
+  --hover: #99A3BA;
+  --dot: #23C4F8;
+  --text: #6C7486;
+  --background: var(--white);
+  /* // --shadow: hsla(224, 29%, 10%, 0.2); */
+}
+
+
