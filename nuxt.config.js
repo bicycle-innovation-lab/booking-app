@@ -23,6 +23,8 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/styles/normalize.css',
+    '~assets/styles/global.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -36,7 +38,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    // '@nuxtjs/stylelint-module'
   ],
   /*
   ** Nuxt.js modules
@@ -51,6 +53,13 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  /*
+   * Router configuration
+   */
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'exact-active'
   },
   /*
   ** Build configuration
