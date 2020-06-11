@@ -15,8 +15,6 @@ export const mutations = {
   },
   UPDATE_BIKES (state, updatedBike) {
     state.bikes.map(obj => obj.id === updatedBike.id && Object.assign(obj, updatedBike))
-
-    // state.bikes.find(updatedBike.id).then(Object.assign(obj, updatedBike))
   }
 }
 
