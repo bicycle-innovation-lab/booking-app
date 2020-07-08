@@ -32,15 +32,15 @@ export default {
     LargeCard
   },
 
+  async asyncData ({ store }) {
+    await store.dispatch('bike/fetchAllBikes')
+    await console.log('ASYNC FETCH')
+  },
+
   head () {
     return {
       title: 'Bicycle innovation lab - bikes'
     }
-  },
-
-  async asyncData ({ store }) {
-    await store.dispatch('bike/fetchAllBikes')
-    await console.log('ASYNC FETCH')
   }
 }
 </script>
