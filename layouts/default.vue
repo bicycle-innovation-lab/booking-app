@@ -29,7 +29,19 @@ body {
   max-width: 500px;
   /* width: 360px; */
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--spacing);
+}
+
+@media screen and (min-width: 48em) {
+  .container {
+    max-width: 48em;
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .container {
+    max-width: 62em;
+  }
 }
 
 .tabbar {
