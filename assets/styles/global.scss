@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 :root {
+  // Colors
   --primary-hue: 178;
   --primary-saturation: 100%;
   --primary-lightness: 25%;
@@ -8,21 +9,45 @@
   --secondary-saturation: 100%;
   --secondary-lightness: 44%;
 
-  --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
-  --secondary-color: hsl(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness));
+  --primary-color: hsl(
+                      var(--primary-hue),
+                      var(--primary-saturation),
+                      var(--primary-lightness)
+                    );
+  --secondary-color: hsl(
+                        var(--secondary-hue),
+                        var(--secondary-saturation),
+                        var(--secondary-lightness)
+                      );
 
   --black: hsl(0, 0%, 18%);
   --white: hsl(0, 0%, 100%);
   --gray: hsl(120, 1%, 68%);
 
+  // Shadows
   --shadow: hsla(0, 0%, 62%, 0.3);
 
+  // Font
   --font-family: 'Montserrat', sans-serif;
 
+  // Misc
   --border-radius: 0.8rem;
+  --spacing: 1rem;
+
+  // --container-width: 
+
+  // Brakepoints
+  $breakpoint-xs: 0;
+  $breakpoint-sm: 36em; // >=576px / 16px
+  $breakpoint-md: 48em; // >=768px
+  $breakpoint-lg: 62em; // >=992px
+  $breakpoint-xl: 75em; // >=1200px
+  $breakpoint-xxl: 88em; // >=1400px
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -32,8 +57,27 @@ body {
   /* // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 h1 {
   color: var(--gray);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  text-decoration: none;
+
+  img {
+    height: 100%;
+    border-radius: var(--border-radius);
+  }
 }
 
 .tabbar {
