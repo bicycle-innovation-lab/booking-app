@@ -1,17 +1,22 @@
 <template>
-  <div :scroll="handleScroll()">
+  <div>
     <div class="gallery">
-      <div :scroll="handleScroll()" class="images">
+      <nav class="back-button">
+        <nuxt-link to="" @click.native="goBack">
+          <button>Tilbage</button>
+        </nuxt-link>
+      </nav>
+      <div class="images">
         <img
-          v-for="(image, index) in bike.Images"
+          v-for="(image, index) in bike.images"
           :key="index"
-          :src="'http://localhost:1337' + image.url"
+          :src="$config.baseURL + image.url"
           :alt="image.alt"
         >
       </div>
-      <ul v-if="bike.Images.length >= 2" class="indicators">
+      <ul v-if="bike.images.length >= 2" class="indicators">
         <li
-          v-for="(image, index) in bike.Images"
+          v-for="(image, index) in bike.images"
           :key="index"
           class="indicator"
         >
@@ -19,11 +24,11 @@
         </li>
       </ul>
     </div>
-    <h1>{{ bike.Name }}</h1>
-    <p>{{ bike.Description }}</p>
+    <h1>{{ bike.name }}</h1>
+    <p>{{ bike.description }}</p>
     <ul>
       <li v-for="(category, index) in bike.categories" :key="index">
-        {{ category.Name }}
+        {{ category.name }}
       </li>
     </ul>
     <!-- <pre>{{ bike }}</pre> -->
@@ -43,12 +48,12 @@ export default {
 
   computed: {
     bike () {
-      return this.$store.state.bike.bikes.find(bike => bike.Name === this.name)
+      return this.$store.state.bike.bikes.find(bike => bike.name === this.name)
     }
   },
 
   mounted () {
-    if (this.bike.Images.length >= 2) {
+    if (this.bike.images.length >= 2) {
       const indicators = this.$el.querySelector('.indicators')
       indicators.childNodes[this.currentImage].childNodes[0].setAttribute('aria-pressed', 'true')
     }
@@ -70,8 +75,8 @@ export default {
 
       indicators.childNodes[index].childNodes[0].setAttribute('aria-pressed', 'true')
     },
-    handleScroll () {
-      console.log('Large')
+    goBack () {
+      this.$router.go(-1)
     }
   }
 }
@@ -88,6 +93,12 @@ export default {
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  .back-button {
+    position: absolute;
+    left: var(--spacing);
+    top: var(--spacing);
   }
 }
 
