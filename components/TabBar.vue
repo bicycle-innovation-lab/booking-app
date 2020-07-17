@@ -134,7 +134,7 @@ export default {
     width: 100%;
     background: var(--background);
     padding: 0 4px;
-    box-shadow: 0 -3px 15px 5px var(--shadow);
+    box-shadow: 0 -3px 15px 5px rgba(0, 0, 0, 0.06);
     ul {
         max-width: 395px;
         margin: 0 auto;
