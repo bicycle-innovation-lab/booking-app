@@ -3,12 +3,12 @@
     <!-- <h1>{{ getBikes }}</h1> -->
     <!-- <pre>{{ bikes }}</pre> -->
     <article v-for="(bike, index) in bikes" :key="index">
-      <nuxt-link :to="bike.Name" class="card">
+      <nuxt-link :to="bike.name" class="card">
         <div class="card__image">
-          <img :src="'http://localhost:1337' + bike.Images[0].url" :alt="bike.Images[0].alt">
+          <img :src="$config.baseURL + bike.images[0].url" :alt="bike.images[0].alt">
         </div>
         <!-- <p>{{ bike.Description }}</p> -->
-        <h3>{{ bike.Name }}</h3>
+        <h3>{{ bike.name }}</h3>
         <!-- <p>{{ bike.Price }}</p> -->
       </nuxt-link>
     </article>
@@ -40,5 +40,9 @@ export default {
 <style lang="scss" scoped>
   .card__image {
     height: 130px;
+
+    img {
+      box-shadow: var(--box-shadow);
+    }
   }
 </style>
