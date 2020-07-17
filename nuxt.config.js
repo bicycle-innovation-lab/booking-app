@@ -16,6 +16,13 @@ export default {
     ]
   },
   /*
+  * Runtime config
+  * https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
+  */
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://booking-app-bicycle-innovation-lab:1337'
+  },
+  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
