@@ -4,7 +4,7 @@
       <h2>Featured Bikes</h2>
       <a href="#" title="See all featured bikes">See all</a>
     </header>
-    <LargeCard class="scroll-container" />
+    <LargeCard class="scroll-container" keep-alive @scroll.passive="test" />
   </section>
 </template>
 
@@ -16,7 +16,26 @@ export default {
 
   components: {
     LargeCard
+  },
+
+  mounted () {
+    const scrollContainer = this.$el.querySelector('.scroll-container')
+    scrollContainer.addEventListener('scroll', this.test)
+  },
+
+  methods: {
+    test () {
+      console.log('test')
+    }
   }
+  // },
+
+  // data: {
+  //   scrollPosition: .scroll-container.ScrollLeft
+  // },
+
+  // watch: {
+  // }
 }
 </script>
 
