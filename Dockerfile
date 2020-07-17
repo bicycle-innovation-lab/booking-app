@@ -4,9 +4,6 @@ FROM node:10
 WORKDIR /app
 ADD . /app/
 
-# global install & update
-# RUN npm i -g npm && npm i -g yarn
-
 COPY ./package.json ./
 COPY ./yarn.lock ./
 
