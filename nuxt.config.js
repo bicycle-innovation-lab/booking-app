@@ -20,7 +20,8 @@ export default {
   * https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   */
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'http://booking-app-bicycle-innovation-lab:1337'
+    baseURL: process.env.BASE_URL || 'http://booking-app-bicycle-innovation-lab:1337',
+    browserBaseUrl: process.env.BROWSER_BASE_URL || 'https://bil-cms.klement.dev'
   },
   /*
   ** Customize the progress-bar color
