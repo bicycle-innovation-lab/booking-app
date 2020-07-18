@@ -2,23 +2,23 @@
 
 @font-face {
   font-family: VR-Regular;
-  src: url('~assets/fonts/VR-Regular.woff2') format('woff2'),
-  url('~assets/fonts/VR-Regular.woff') format('woff');
+  src: url('/fonts/VR-Regular.woff2') format('woff2'),
+  url('/fonts/VR-Regular.woff') format('woff');
 }
 @font-face {
   font-family: VR-DemiBold;
-  src: url('~assets/fonts/VR-DemiBold.woff2') format('woff2'),
-  url('~assets/fonts/VR-DemiBold.woff') format('woff');
+  src: url('/fonts/VR-DemiBold.woff2') format('woff2'),
+  url('/fonts/VR-DemiBold.woff') format('woff');
 }
 @font-face {
   font-family: VR-Bold;
-  src: url('~assets/fonts/VR-Bold.woff2') format('woff2'),
-  url('~assets/fonts/VR-Bold.woff') format('woff');
+  src: url('/fonts/VR-Bold.woff2') format('woff2'),
+  url('/fonts/VR-Bold.woff') format('woff');
 }
 @font-face {
   font-family: VR-Heavy;
-  src: url('~assets/fonts/VR-Heavy.woff2') format('woff2'),
-  url('~assets/fonts/VR-Heavy.woff') format('woff');
+  src: url('/fonts/VR-Heavy.woff2') format('woff2'),
+  url('/fonts/VR-Heavy.woff') format('woff');
 }
 
 :root {
