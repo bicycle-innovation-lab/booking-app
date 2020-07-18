@@ -22,6 +22,8 @@ export const actions = {
   async fetchAllBikes ({ commit }) {
     try {
       const response = await this.$axios.$get(this.$config.axios.baseURL + '/bikes')
+      console.log('config.axios.baseURL: ', this.$config.axios.baseURL)
+      console.log('fetchAlleBikes response: ', response)
       commit('SET_BIKES', response)
     } catch (error) {
       console.error(error)
