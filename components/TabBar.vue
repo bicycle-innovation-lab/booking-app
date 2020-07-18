@@ -134,6 +134,7 @@ export default {
     width: 100%;
     background: var(--background);
     padding: 0 4px;
+    padding-bottom: 2rem;
     box-shadow: 0 -3px 15px 5px rgba(0, 0, 0, 0.06);
     ul {
         max-width: 395px;
@@ -242,8 +243,8 @@ export default {
                     }
                 }
                 strong {
-                    font-size: 10px;
-                    font-weight: 600;
+                    font-size: 12px;
+                    font-weight: 400;
                     margin-top: 28px;
                     color: var(--text);
                     transition: all .3s ease;

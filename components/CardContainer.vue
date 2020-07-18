@@ -44,6 +44,7 @@ section > header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: .4rem;
 }
 
 .scroll-container {
@@ -86,6 +87,21 @@ section > header {
 .scroll-container:first-child {
   background: #000;
 }
+
+header {
+    h2 {
+      font-size: .9rem;
+      font-weight: normal;
+      font-family: 'VR-Bold';
+    }
+
+    a {
+      font-family: 'VR-DemiBold';
+      font-size: .9rem;
+      text-decoration: none;
+      color: hsl(var(--primary-hue), 70%, 50%)
+    }
+  }
 
 @media screen and (min-width: 48em){
   .scroll-container{

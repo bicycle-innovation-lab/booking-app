@@ -38,11 +38,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .card__image {
-    height: 130px;
+.card > h3{
+  font-size: 1rem;
+  color: gray;
+  margin-top: .8rem;
+  margin-left: .2rem;
+  font-weight: 400;
+}
+.card__image {
+  height: 130px;
 
-    img {
-      box-shadow: var(--box-shadow);
-    }
+  img {
+    box-shadow: var(--box-shadow);
   }
+}
 </style>
