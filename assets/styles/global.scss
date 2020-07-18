@@ -1,4 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+@font-face {
+  font-family: VR-Regular;
+  src: url('../fonts/VR-Regular.woff2') format('woff2'),
+  url('../fonts/VR-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: VR-DemiBold;
+  src: url('../fonts/VR-DemiBold.woff2') format('woff2'),
+  url('../fonts/VR-DemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: VR-Bold;
+  src: url('../fonts/VR-Bold.woff2') format('woff2'),
+  url('../fonts/VR-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: VR-Heavy;
+  src: url('../fonts/VR-Heavy.woff2') format('woff2'),
+  url('../fonts/VR-Heavy.woff') format('woff');
+}
 
 :root {
   // Colors
@@ -33,7 +54,7 @@
   --box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   
   // Font
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'VR-DemiBold', 'Montserrat', sans-serif;
 
   // Misc
   --border-radius: 0.8rem;
@@ -59,7 +80,10 @@
 body {
   font-size: 100%;
   font-family: var(--font-family);
-  /* // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
 }
 
 img {
@@ -70,6 +94,10 @@ img {
 
 h1 {
   color: var(--gray);
+}
+
+p {
+  font-family: 'VR-Regular', 'Montserrat', sans-serif;
 }
 
 .card {
