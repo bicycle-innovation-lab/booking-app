@@ -27,13 +27,13 @@ export default {
   */
   publicRuntimeConfig: {
     axios: {
-      baseURL: process.env.CLIENT_URL || 'http://bil-cms.klement.dev'
+      baseURL: process.env.CLIENT_URL || 'https://bil-cms.klement.dev'
     }
   },
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: process.env.SERVER_URL || 'http://localhost:1337'
+      baseURL: process.env.SERVER_URL || 'strapi:1337'
     }
   },
   /*
