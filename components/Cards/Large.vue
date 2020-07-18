@@ -5,7 +5,7 @@
     <article v-for="(bike, index) in bikes" :key="index">
       <nuxt-link :to="bike.name" class="card">
         <div class="card__image">
-          <img :src="$config.baseURL + bike.images[0].url" :alt="bike.images[0].alt">
+          <img :src="$config.axios.baseURL + bike.images[0].url" :alt="bike.images[0].alt">
         </div>
         <!-- <p>{{ bike.Description }}</p> -->
         <h3>{{ bike.name }}</h3>

@@ -16,12 +16,25 @@ export default {
     ]
   },
   /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+  },
+  /*
   * Runtime config
   * https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   */
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'http://booking-app-bicycle-innovation-lab:1337',
-    browserBaseUrl: process.env.BROWSER_BASE_URL || 'https://bil-cms.klement.dev'
+    axios: {
+      baseURL: process.env.CLIENT_URL || 'http://bil-cms.klement.dev'
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.SERVER_URL || 'http://localhost:1337'
+    }
   },
   /*
   ** Customize the progress-bar color
@@ -56,12 +69,6 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-  },
   /*
    * Router configuration
    */

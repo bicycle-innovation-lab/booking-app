@@ -19,17 +19,25 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchAllBikes ({ commit }) {
-    bikeService.fetch()
-      .then((response) => {
-        if (response.status === 200) {
-          commit('SET_BIKES', response.data)
-        }
-      })
-      .catch((error) => {
-        throw error
-      })
+  async fetchAllBikes ({ commit }) {
+    try {
+      const response = await this.$axios.$get(this.$config.axios.baseURL + '/bikes')
+      commit('SET_BIKES', response)
+    } catch (error) {
+      console.error(error)
+    }
   },
+  // fetchAllBikes ({ commit }) {
+  //   bikeService.fetch()
+  //     .then((response) => {
+  //       if (response.status === 200) {
+  //         commit('SET_BIKES', response.data)
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       throw error
+  //     })
+  // },
 
   addBike ({ commit }, payload) {
     bikeService.create(payload)

@@ -6,11 +6,11 @@
           <button>Tilbage</button>
         </nuxt-link>
       </nav>
-      <div class="images">
+      <div class="images" :style="cssProps">
         <img
           v-for="(image, index) in bike.images"
           :key="index"
-          :src="$config.baseURL + image.url"
+          :src="$config.axios.baseURL + image.url"
           :alt="image.alt"
         >
       </div>
@@ -49,6 +49,11 @@ export default {
   computed: {
     bike () {
       return this.$store.state.bike.bikes.find(bike => bike.name === this.name)
+    },
+    cssProps () {
+      return {
+        '--columns': this.bike.images.length
+      }
     }
   },
 
@@ -106,7 +111,7 @@ export default {
   // max-height: 60vh;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 100%);
+  grid-template-columns: repeat( var(--columns) , 100%);
 
   // overflow-x: auto;
   overflow-y: hidden;
