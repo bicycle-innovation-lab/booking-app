@@ -1,5 +1,5 @@
 <template>
-  <div id="bikesContainer">
+  <div id="bikesContainer container">
     <h1>Explore our bikes</h1>
     <CardContainer />
   </div>
@@ -26,7 +26,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.container {
+  & > h1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.1s ease-out;

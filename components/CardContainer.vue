@@ -93,6 +93,7 @@ header {
       font-size: .9rem;
       font-weight: normal;
       font-family: 'VR-Bold';
+      text-transform: uppercase;
     }
 
     a {

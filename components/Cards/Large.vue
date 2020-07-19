@@ -46,7 +46,7 @@ export default {
   font-weight: 400;
 }
 .card__image {
-  height: 130px;
+  height: 180px;
 
   img {
     box-shadow: var(--box-shadow);
