@@ -48,7 +48,7 @@ section > header {
 }
 
 .scroll-container {
-  --card-width: 70%;
+  --card-width: 85%;
   display: grid;
   gap: calc(var(--spacing) / 2);
   grid-gap: calc(var(--spacing) / 2);
