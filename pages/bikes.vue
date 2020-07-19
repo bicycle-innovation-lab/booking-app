@@ -1,6 +1,6 @@
 <template>
   <div id="bikesContainer">
-    <h1>Explore the bikes</h1>
+    <h1>Explore our bikes</h1>
     <CardContainer />
   </div>
 </template>

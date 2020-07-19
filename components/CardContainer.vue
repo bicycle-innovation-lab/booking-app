@@ -1,8 +1,8 @@
 <template>
   <section>
     <header>
-      <h2>Featured Bikes</h2>
-      <a href="#" title="See all featured bikes">See all</a>
+      <h2>Featured</h2>
+      <a href="#" title="See all featured bikes">View all</a>
     </header>
     <LargeCard class="scroll-container" keep-alive @scroll.passive="test" />
   </section>
