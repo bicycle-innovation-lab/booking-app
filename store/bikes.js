@@ -3,7 +3,10 @@ export const state = () => ({
 })
 
 export const actions = {
-  async fetchAllBikes ({ commit }) {
+  async fetchAllBikes ({ commit, state }) {
+    if (Array.isArray(state.all) && state.all.length) {
+      return
+    }
     const bikes = await this.$axios.$get('bikes')
     commit('setBikes', bikes)
   },
