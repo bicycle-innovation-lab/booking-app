@@ -1,39 +1,32 @@
 <template>
-  <div>
-    <!-- <h1>{{ getBikes }}</h1> -->
-    <!-- <pre>{{ bikes }}</pre> -->
-    <article v-for="(bike, index) in bikes" :key="index">
-      <nuxt-link :to="bike.name" class="card">
-        <div class="card__image">
-          <img :src="$config.axios.baseURL + bike.images[0].url" :alt="bike.images[0].alt">
-        </div>
-        <!-- <p>{{ bike.Description }}</p> -->
-        <h3>{{ bike.name }}</h3>
-        <!-- <p>{{ bike.Price }}</p> -->
-      </nuxt-link>
-    </article>
-  </div>
+  <article>
+    <nuxt-link
+      v-for="(bike, index) in bikes"
+      :key="index"
+      :to="`${bike.id}`"
+      class="card"
+    >
+      <div class="card__image">
+        <img :src="$config.axios.baseURL + bike.images[0].url" :alt="bike.images[0].alt">
+      </div>
+      <h3>{{ bike.name }}</h3>
+    </nuxt-link>
+  </article>
 </template>
 
 <script>
-// import { mapActions } from 'vuex'
-
 export default {
   name: 'LargeCard',
 
+  async fetch ({ store }) {
+    await store.dispatch('bikes/fetchAllBikes')
+  },
+
   computed: {
-  // ...mapActions({
-  //   getBikes: 'bike/fetchAllBikes'
-  // }),
     bikes () {
-      return this.$store.state.bike.bikes
+      return this.$store.state.bikes.all
     }
   }
-  // },
-
-  // mounted () {
-  //   this.$store.dispatch('bike/fetchAllBikes')
-  // }
 }
 </script>
 

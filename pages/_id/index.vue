@@ -8,8 +8,8 @@
       </nav>
       <div class="images" :style="cssProps">
         <img
-          v-for="(image, index) in bike.images"
-          :key="index"
+          v-for="image in bike.images"
+          :key="image.id"
           :src="$config.axios.baseURL + image.url"
           :alt="image.alt"
         >
@@ -27,28 +27,29 @@
     <h1>{{ bike.name }}</h1>
     <p>{{ bike.description }}</p>
     <ul>
-      <li v-for="(category, index) in bike.categories" :key="index">
+      <li v-for="category in bike.categories" :key="category.id">
         {{ category.name }}
       </li>
     </ul>
-    <!-- <pre>{{ bike }}</pre> -->
   </div>
 </template>
 
 <script>
-// import { mapState } from 'vuex'
-
 export default {
+  async fetch ({ store, params }) {
+    await store.dispatch('bikes/fetchBike', params.id)
+  },
+
   data () {
     return {
-      name: this.$route.params.id,
+      id: this.$route.params.id,
       currentImage: 0
     }
   },
 
   computed: {
     bike () {
-      return this.$store.state.bike.bikes.find(bike => bike.name === this.name)
+      return this.$store.state.bikes.all.find(bike => bike.id === Number(this.id))
     },
     cssProps () {
       return {

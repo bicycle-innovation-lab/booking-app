@@ -14,8 +14,14 @@ export default {
     CardContainer
   },
 
-  async asyncData ({ store }) {
-    await store.dispatch('bike/fetchAllBikes')
+  async fetch ({ store }) {
+    await store.dispatch('bikes/fetchAllBikes')
+  },
+
+  computed: {
+    bikes () {
+      return this.$store.state.bikes.all
+    }
   },
 
   head () {
