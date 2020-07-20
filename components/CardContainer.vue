@@ -28,14 +28,6 @@ export default {
       console.log('test')
     }
   }
-  // },
-
-  // data: {
-  //   scrollPosition: .scroll-container.ScrollLeft
-  // },
-
-  // watch: {
-  // }
 }
 </script>
 
@@ -69,7 +61,7 @@ section > header {
   }
 }
 
-.scroll-container > article {
+.scroll-container > .card {
   scroll-snap-align: start;
   scroll-snap-margin: var(--spacing);
   scroll-margin: var(--spacing);
