@@ -10,7 +10,7 @@
         <img
           v-for="image in bike.images"
           :key="image.id"
-          :src="$config.axios.baseURL + image.formats.small.url"
+          :src="$config.axios.baseURL + (image.formats === null ? image.url : image.formats.small.url)"
           :alt="image.alt"
         >
       </div>
