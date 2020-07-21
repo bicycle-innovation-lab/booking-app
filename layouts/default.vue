@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt class="container" />
+    <Nuxt keep-alive class="container" />
     <TabBar class="tabbar" />
   </div>
 </template>
