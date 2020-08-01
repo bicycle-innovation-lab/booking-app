@@ -7,16 +7,30 @@ export const actions = {
     if (Array.isArray(state.all) && state.all.length) {
       return
     }
-    const bikes = await this.$axios.$get('bikes')
-    commit('setBikes', bikes)
+    try {
+      const bikes = await this.$axios.$get('bikes')
+      commit('setBikes', bikes)
+    } catch (error) {
+      if (process.client) {
+        this.$toast.error(error)
+      }
+      console.error(error)
+    }
   },
 
   async fetchBike ({ commit, state }, id) {
     if (state.all.some(id => id)) {
       return state.all.find(id => id)
     }
-    const bike = await this.$axios.$get(`bikes/${id}`)
-    commit('setBike', bike)
+    try {
+      const bike = await this.$axios.$get(`bikes/${id}`)
+      commit('setBike', bike)
+    } catch (error) {
+      if (process.client) {
+        this.$toast.error(error)
+      }
+      console.log(error)
+    }
   }
 }
 
