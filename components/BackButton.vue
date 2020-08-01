@@ -19,12 +19,18 @@
 
 <script>
 export default {
-  name: 'BackButton'
+  name: 'BackButton',
+
+  methods: {
+    goBack () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .feather-arrow-left {
-  fill: inherit;
+  stroke: white;
 }
 </style>
