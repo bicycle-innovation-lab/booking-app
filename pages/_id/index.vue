@@ -2,9 +2,7 @@
   <div>
     <div class="gallery">
       <nav class="back-button">
-        <nuxt-link to="" @click.native="goBack">
-          <button>Tilbage</button>
-        </nuxt-link>
+        <BackButton />
       </nav>
       <div class="images" :style="cssProps">
         <img
@@ -26,16 +24,29 @@
     </div>
     <h1>{{ bike.name }}</h1>
     <p>{{ bike.description }}</p>
-    <ul>
+
+    <ul class="categories">
       <li v-for="category in bike.categories" :key="category.id">
         {{ category.name }}
+      </li>
+    </ul>
+
+    <ul class="highlights">
+      <li v-for="highlight in bike.highlights" :key="highlight.id">
+        {{ highlight.description }}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import BackButton from '@/components/BackButton.vue'
+
 export default {
+  components: {
+    BackButton
+  },
+
   async fetch ({ store, params }) {
     await store.dispatch('bikes/fetchBike', params.id)
   },
@@ -102,6 +113,7 @@ export default {
   }
 
   .back-button {
+    z-index: 1;
     position: absolute;
     left: var(--spacing);
     top: var(--spacing);
@@ -109,7 +121,8 @@ export default {
 }
 
 .images {
-  // max-height: 60vh;
+  position: relative;
+  z-index: 0;
   height: 100%;
   display: grid;
   grid-template-columns: repeat( var(--columns) , 100%);
@@ -130,12 +143,12 @@ export default {
     height: 100%;
     width: 100%;
     object-fit:cover;
-
     scroll-snap-align: center;
   }
 }
 
 .indicators {
+  z-index: 1;
   position: absolute;
   background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.6));
   bottom: 0;
@@ -158,7 +171,6 @@ export default {
 
       &::after {
         content: '○';
-        font-size: 1.2em;
       }
 
       &:hover {
