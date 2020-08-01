@@ -23,13 +23,8 @@
       </ul>
     </div>
     <h1>{{ bike.name }}</h1>
+    <CategoryLabels :categories="bike.categories" />
     <p>{{ bike.description }}</p>
-
-    <ul class="categories">
-      <li v-for="category in bike.categories" :key="category.id">
-        {{ category.name }}
-      </li>
-    </ul>
 
     <ul class="highlights">
       <li v-for="highlight in bike.highlights" :key="highlight.id">
@@ -41,10 +36,12 @@
 
 <script>
 import BackButton from '@/components/BackButton.vue'
+import CategoryLabels from '@/components/CategoryLabels.vue'
 
 export default {
   components: {
-    BackButton
+    BackButton,
+    CategoryLabels
   },
 
   async fetch ({ store, params }) {
@@ -66,6 +63,16 @@ export default {
       return {
         '--columns': this.bike.images.length
       }
+    }
+  },
+
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      console.log('savedScrollPosition ', savedPosition)
+      return savedPosition
+    } else {
+      console.log('No saved position ')
+      return { x: 0, y: 0 }
     }
   },
 
