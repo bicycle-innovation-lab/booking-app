@@ -52,7 +52,8 @@
   --box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   
   // Font
-  --font-family: 'VR-DemiBold', 'Montserrat', sans-serif;
+  --font-family: 'VR-Regular', 'Montserrat', sans-serif;
+  --font-bold: 'VR-DemiBold', 'Montserrat', sans-serif;
 
   // Misc
   --border-radius: 0.8rem;
@@ -92,10 +93,6 @@ img {
 
 h1 {
   color: var(--gray);
-}
-
-p {
-  font-family: 'VR-Regular', 'Montserrat', sans-serif;
 }
 
 .card {
