@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="gallery">
-      <nav class="back-button">
-        <BackButton />
-      </nav>
+      <BackButton class="back-button" />
       <div class="images" :style="cssProps">
         <img
           v-for="image in bike.images"
@@ -22,26 +20,28 @@
         </li>
       </ul>
     </div>
-    <h1>{{ bike.name }}</h1>
-    <CategoryLabels :categories="bike.categories" />
+    <h1 class="heading">
+      {{ bike.name }}
+    </h1>
+
+    <CategoryLabels v-if="bike.categories.length > 0" :categories="bike.categories" />
+
     <p>{{ bike.description }}</p>
 
-    <ul class="highlights">
-      <li v-for="highlight in bike.highlights" :key="highlight.id">
-        {{ highlight.description }}
-      </li>
-    </ul>
+    <Highlights v-if="bike.highlights.length > 0" :highlights="bike.highlights" />
   </div>
 </template>
 
 <script>
 import BackButton from '@/components/BackButton.vue'
 import CategoryLabels from '@/components/CategoryLabels.vue'
+import Highlights from '@/components/Highlights.vue'
 
 export default {
   components: {
     BackButton,
-    CategoryLabels
+    CategoryLabels,
+    Highlights
   },
 
   async fetch ({ store, params }) {
@@ -107,6 +107,10 @@ export default {
 </script>
 
 <style lang="scss">
+.heading {
+  margin-bottom: 1rem;
+}
+
 .gallery {
   position: relative;
   margin: calc(var(--spacing) * -1) calc(var(--spacing) * -1) var(--spacing);

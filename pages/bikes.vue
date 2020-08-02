@@ -1,6 +1,8 @@
 <template>
   <div id="bikesContainer container">
-    <h1>Explore our bikes</h1>
+    <h1>
+      Explore our bikes
+    </h1>
     <CardContainer />
   </div>
 </template>
@@ -32,9 +34,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
-  & > h1 {
+  h1 {
     margin-top: 0;
     margin-bottom: 2rem;
   }
