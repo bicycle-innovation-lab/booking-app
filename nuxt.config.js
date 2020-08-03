@@ -84,7 +84,8 @@ export default {
    */
   router: {
     linkActiveClass: 'active',
-    linkExactActiveClass: 'exact-active'
+    linkExactActiveClass: 'exact-active',
+    middleware: ['mobile']
   },
   /*
   ** Build configuration

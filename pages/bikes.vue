@@ -11,6 +11,7 @@
 import CardContainer from '@/components/CardContainer.vue'
 
 export default {
+  layout: ({ isMobile }) => isMobile ? 'mobile' : 'default',
 
   components: {
     CardContainer

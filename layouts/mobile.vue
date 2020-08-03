@@ -1,12 +1,17 @@
 <template>
   <div>
     <Nuxt keep-alive class="container" />
+    <TabBar class="tabbar" />
   </div>
 </template>
 
 <script>
-export default {
+import TabBar from '@/components/TabBar'
 
+export default {
+  components: {
+    TabBar
+  }
 }
 </script>
 
