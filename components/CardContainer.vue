@@ -4,7 +4,7 @@
       <h2>Featured</h2>
       <a href="#" title="See all featured bikes">View all</a>
     </header>
-    <LargeCard class="scroll-container" keep-alive @scroll.passive="test" />
+    <LargeCard class="featured" />
   </section>
 </template>
 
@@ -16,17 +16,6 @@ export default {
 
   components: {
     LargeCard
-  },
-
-  mounted () {
-    const scrollContainer = this.$el.querySelector('.scroll-container')
-    scrollContainer.addEventListener('scroll', this.test)
-  },
-
-  methods: {
-    test () {
-      console.log('test')
-    }
   }
 }
 </script>
@@ -39,7 +28,7 @@ section > header {
   margin-bottom: .4rem;
 }
 
-.scroll-container {
+.featured {
   --card-width: 85%;
   display: grid;
   gap: calc(var(--spacing) / 2);
@@ -61,7 +50,7 @@ section > header {
   }
 }
 
-.scroll-container > .card {
+.featured > .card {
   scroll-snap-align: start;
   scroll-snap-margin: var(--spacing);
   scroll-margin: var(--spacing);
@@ -76,7 +65,7 @@ section > header {
   }
 }
 
-.scroll-container:first-child {
+.featured:first-child {
   background: #000;
 }
 
@@ -97,14 +86,14 @@ header {
   }
 
 @media screen and (min-width: 48em){
-  .scroll-container{
+  .featured{
     grid-template-columns: repeat(5, calc(40% - 40px));
     // grid-template-rows: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 62em){
-  .scroll-container{
+  .featured{
     grid-template-columns: repeat(5, 1fr);
     // grid-template-rows: 1fr 1fr;
   }

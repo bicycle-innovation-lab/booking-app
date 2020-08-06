@@ -2,7 +2,7 @@
   <nav class="tabbar">
     <ul>
       <li>
-        <nuxt-link to="/bikes">
+        <nuxt-link to="/">
           <div>
             <span>
               <svg>
