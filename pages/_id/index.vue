@@ -98,9 +98,6 @@ export default {
       carousel.scrollTo(width * index, 0)
 
       indicators.childNodes[index].childNodes[0].setAttribute('aria-pressed', 'true')
-    },
-    goBack () {
-      this.$router.go(-1)
     }
   }
 }
