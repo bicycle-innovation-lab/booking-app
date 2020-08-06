@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article @scroll.passive="handleScroll($event)">
     <nuxt-link
       v-for="(bike, index) in bikes"
       :key="index"
@@ -25,6 +25,26 @@ export default {
   computed: {
     bikes () {
       return this.$store.state.bikes.all
+    },
+    position: {
+      get () {
+        return this.$store.state.ui.position
+      },
+      set (newPosition) {
+        this.$store.commit('ui/setPosition', newPosition)
+      }
+    }
+  },
+
+  mounted () {
+    console.log('mounted', this.position)
+    this.$el.scrollLeft = this.position
+  },
+
+  methods: {
+    handleScroll ({ target }) {
+      this.position = target.scrollLeft
+      console.log('handleScroll', this.position)
     }
   }
 }
