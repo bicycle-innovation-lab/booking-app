@@ -36,7 +36,7 @@ export default {
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: process.env.SERVER_URL || 'strapi:1337'
+      baseURL: process.env.SERVER_URL || 'http://strapi:1337'
     }
   },
   /*
