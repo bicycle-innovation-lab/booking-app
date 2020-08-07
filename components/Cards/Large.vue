@@ -7,7 +7,7 @@
       class="card"
     >
       <div class="card__image">
-        <img :src="$config.axios.baseURL + bike.images[0].formats.small.url" :alt="bike.images[0].alt">
+        <img :src="$config.axios.browserBaseURL + bike.images[0].formats.small.url" :alt="bike.images[0].alt">
       </div>
       <h3>{{ bike.name }}</h3>
     </nuxt-link>
