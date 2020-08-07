@@ -9,7 +9,7 @@ ADD package.json yarn.lock ./
 RUN yarn --frozen-lockfile --non-interactive && node-clean
 
 ADD . ./
-RUN yarn build
+RUN yarn build:modern
 
 FROM node:12-alpine
 WORKDIR /app
@@ -21,4 +21,4 @@ COPY --from=builder ./app/static ./static/
 ENV NODE_ENV=production
 ENV HOST 0.0.0.0
 EXPOSE 3000
-CMD ["yarn", "start"]
+CMD ["yarn", "start:modern"]
