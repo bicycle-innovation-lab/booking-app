@@ -28,12 +28,14 @@ export default {
   * Runtime config
   * https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   */
+  // Available on server and client
   publicRuntimeConfig: {
     axios: {
-      baseURL: process.env.CLIENT_URL || 'https://bil-cms.klement.dev'
+      baseURL: process.env.CLIENT_URL || 'https://bil-cms.klement.dev',
+      browserBaseURL: 'https://bil-cms.klement.dev'
     }
   },
-
+  // Available only on server. Overwrites public config
   privateRuntimeConfig: {
     axios: {
       baseURL: process.env.SERVER_URL || 'http://strapi:1337',
