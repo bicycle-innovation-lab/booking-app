@@ -18,7 +18,8 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/toast": "^3.3.1",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "v-shared-element": "^2.1.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

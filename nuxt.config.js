@@ -57,6 +57,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/v-shared-element.client.js'
   ],
   /*
   ** Nuxt.js dev-modules
